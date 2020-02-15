@@ -2,31 +2,37 @@
 
 <html>
 
-<head>
+		<head>
+					<meta charset='utf-8'>
+			  		<title> Kang </title>
+					<!-- for use var text1= $('#text1').val(); otherwise  ReferenceError: $ is not defined -->
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>   	
+					<!-- for use  D3 Drawning   -->
+					<script src="//web.archive.org/web/20160418220302js_/http://d3js.org/d3.v3.min.js"></script>  
+			  		<link rel="stylesheet" type="text/css"   href= "{{ url_for('static', filename='styles/styles.css') }}">
+		</head>
 
-  <title> Kang </title>
-  <link rel="stylesheet" type="text/css"   href= "{{ url_for('static', filename='styles/styles.css') }}">
-  <!-- <link href= "{{ url_for('static', filename='data.tsv') }}"> -->
-  <meta charset='utf-8'>
 
-</head>
+		<body>		  
+					  <h1> Grace Kang ^;^ 
+					  <p>  Grace Kang ^;^ </p>
+					  <h2> Apple : The Profitalbe Fruit hi Kang 8000 i hope it will ok</h2>
+					  <h3> Apple : The Profitalbe Fruit hi Kang 8000 i hope it will ok</h3>
 
-
-<body>
-  <h1> Grace Kang ^;^ >
-  <p> Grace Kang ^;^ </p>
+				      <p> 	Input data:<br><br>
+				            text1 :<input type="text" id="text1" name="text1"><br><br>
+				            text2:<input type="text" id="text2" name="text2"><br><br>
+				            <button id="clicked" onclick="myFunction()">Submit</button>
+				      </p>
+				      <!-- To show data -->
+				      <!-- <div class="show-data" ></div> -->
+ 					  <!-- <div id="apple-stock-chart"></div> can not work --> 
+					  <div class="show-data"  ></div>
+		</body>
   
-  <h2> Apple : The Profitalbe Fruit hi Kang 8000 i hope it will ok</h2>
-  <h3> Apple : The Profitalbe Fruit hi Kang 8000 i hope it will ok</h3>
 
-</body>
-
-  
-<script src="//web.archive.org/web/20160418220302js_/http://d3js.org/d3.v3.min.js"></script>
-
-<!-- <script src="static/main.js"></script> -->
-  
-<script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+		<script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+		<script src="{{ url_for('static', filename='scripts/textinput.js') }}"></script>
 
 </html>
 

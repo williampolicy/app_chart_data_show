@@ -32,7 +32,7 @@ var svg = d3.select("body").append("svg")
     .attr("height", height + margin.top + margin.bottom)
     .attr("class", "chart")
     .attr("id", "apple-stock-chart")
-  .append("g")
+    .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.tsv("/static/data/data.tsv", function(error, data) {

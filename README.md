@@ -34,3 +34,5 @@ flask run
 It can WORK !  Let GO! 
 2020.2.14 : git commit -m "set app.static_url_path='/static', It work from Flask to call js ,and data." 
 
+Add chart and text input. It work! well done. 
+2020.2.24: git commit -m "Add chart and text input. It work! well done. " 
