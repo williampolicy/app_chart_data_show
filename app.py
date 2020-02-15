@@ -1,20 +1,32 @@
-# chart-example
-# 关于黑屏问题。 需要更换端口号。 
-- Front:
-python -m SimpleHTTPServer 8000
-http://localhost:8000/
-8080
-8088 等等
-使用Chome 黑屏。 ,使用MAC自己的浏览器。 没有问题。  
-https://williampolicy.github.io/chart-example/
+from flask import Flask
+from flask import render_template
+from flask import url_for
 
-- Start app
+#url_for('static', filename='main.js')
+#url_for('static', filename='data.tsv')
 
-export FLASK_APP=app.py
-flask run
+app = Flask(__name__)
+app.static_url_path='/static'
+
+#--------------- set app.static_url_path ------------
+# remove old static map
+url_map = app.url_map
+try:
+	for rule in url_map.iter_rules('static'):
+		url_map._rules.remove(rule)
+except ValueError:
+    # no static view was created yet
+    pass
+# register new; the same view function is used
+app.add_url_rule(
+    app.static_url_path + '/<path:filename>',
+    endpoint='static', view_func=app.send_static_file)
 
 
-
+@app.route('/')
+def index():
+	print ('jump into index()')
+	return render_template('index.html')
 
 #https://stackoverflow.com/questions/48047533/d3-does-not-load-tsv-data-in-python-flask-script
 # Make sure you configured your static file path somewhere in you app code
@@ -30,7 +42,4 @@ flask run
 # 1. Flask creates the URL route when you create the Flask() object. You'll need to re-add that route:
 # 2. It'll be easier just to configure your Flask() object with the correct static URL path.
 
-
-It can WORK !  Let GO! 
-2020.2.14 : git commit -m "set app.static_url_path='/static', It work from Flask to call js ,and data." 
 
