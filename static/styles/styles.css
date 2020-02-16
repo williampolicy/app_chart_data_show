@@ -19,7 +19,7 @@ body {
   fill: none;
   stroke: steelblue;
   /*black*/
-  stroke-width: 10px;
+  stroke-width: 1.5px;
 }
 
 #apple-stock-chart .overlay {

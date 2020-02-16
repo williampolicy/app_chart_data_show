@@ -31,6 +31,14 @@ flask run
 # 2. It'll be easier just to configure your Flask() object with the correct static URL path.
 
 
+FLASK_APP=hello_world flask run --host 0.0.0.0
+FLASK_APP=hello_world FLASK_DEBUG=1 flask run --host 0.0.0.0 --port 3000
+FLASK_APP=hello_world FLASK_DEBUG=1 flask run --host 0.0.0.0 --port 3000
+FLASK_APP=hello_world flask run --port 3000
+
+
+
+
 It can WORK !  Let GO! 
 2020.2.14 : git commit -m "set app.static_url_path='/static', It work from Flask to call js ,and data." 
 

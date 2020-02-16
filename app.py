@@ -6,6 +6,9 @@ from flask import jsonify
 #url_for('static', filename='main.js')
 #url_for('static', filename='data.tsv')
 
+from flask import current_app # call current_app.send_static_file
+
+
 app = Flask(__name__)
 
 
@@ -62,6 +65,13 @@ def my_form_post():
 
     return jsonify(result=result)
 
+
+# http://127.0.0.1:5000/favicon.ico
+@app.route('/favicon.ico')
+def favicon():
+    print('jump into favicon() to find favicon.ico')
+    return current_app.send_static_file('favicon/favicon.ico')
+                                        #static/favicon/favicon.ico , no need to say static again.
 
 #--------------- 2.   define fuction        ------------
 def do_something(text1,text2):
